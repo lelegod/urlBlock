@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Blocker</title>
+    <style>
+        body { font-family: sans-serif; padding: 10px; width: 320px; }
+        h3 { margin-top: 0; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="time"] { width: calc(100% - 12px); padding: 5px; margin-bottom: 10px; border: 1px solid #ccc; box-sizing: border-box; }
+        .time-inputs { display: flex; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+        .time-inputs > div { flex: 1; }
+        button { padding: 8px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; border-radius: 3px; }
+        button:hover { background-color: #0056b3; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 5px; display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-bottom: 1px dotted #eee; }
+        li:last-child { border-bottom: none; }
+        .remove-btn { background-color: #dc3545; font-size: 0.8em; padding: 3px 8px; border-radius: 3px; }
+        .remove-btn:hover { background-color: #c82333; }
+        #message { margin-top: 10px; color: green; font-weight: bold; }
+        #error { margin-top: 10px; color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h3>Block a Domain</h3>
+    <label for="domainInput">Enter Domain (e.g., example.com):</label>
+    <input type="text" id="domainInput" placeholder="e.g., facebook.com">
+    <div class="time-inputs">
+        <div>
+            <label for="startTimeInput">Start Time:</label>
+            <input type="time" id="startTimeInput">
+        </div>
+        <div>
+            <label for="endTimeInput">End Time:</label>
+            <input type="time" id="endTimeInput">
+        </div>
+    </div>
+    <button id="addDomainButton">Add to Block List</button>
+
+    <div id="message"></div>
+    <div id="error"></div>
+
+    <h3>Blocked Domains:</h3>
+    <ul id="blockedDomainList">
+        </ul>
+
+    <button id="openDashboardButton">Open Dashboard</button>
+    <script src="popup.js"></script>
+</body>
+</html>

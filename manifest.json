@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "URL Block",
+    "version": "1.0.0",
+    "description": "ttt",
+    "background": {
+        "service_worker": "service_worker.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "options_page": "dashboard.html",
+    "declarative_net_request": {
+        "rule_resources": [
+            {
+            "id": "ruleset_1",
+            "enabled": true,
+            "path": "rules_1.json"
+            }
+        ]
+    },
+    "permissions": [
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback",
+        "declarativeNetRequestWithHostAccess",
+        "storage",
+        "alarms"
+    ],
+    "host_permissions": [
+        "*://*/*"
+    ]
+}
